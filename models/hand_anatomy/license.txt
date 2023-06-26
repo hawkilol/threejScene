@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hand anatomy
+* source:	https://sketchfab.com/3d-models/hand-anatomy-ada8498be9754e9f90b2eecc1b4ef8c5
+* author:	caterina.zamai (https://sketchfab.com/caterina.zamai)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hand anatomy" (https://sketchfab.com/3d-models/hand-anatomy-ada8498be9754e9f90b2eecc1b4ef8c5) by caterina.zamai (https://sketchfab.com/caterina.zamai) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
