@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { ShaderMaterial } from 'three';
 import { MeshStandardMaterial, MeshBasicMaterial, MeshLambertMaterial , MeshPhongMaterial} from 'three';
-
+import { vertexShader, fragmentShader } from './public/shaders.js';
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 )
@@ -16,13 +16,15 @@ document.querySelector('#app').appendChild( renderer.domElement )
 renderer.shadowMap.enabled = true
 const controls = new OrbitControls(camera, renderer.domElement)
 
-const light = new THREE.PointLight(0xffffff, 1)
+const light = new THREE.PointLight(0xffffff, 1, 10)
 light.castShadow = true
+var start = Date.now()
 // const helper = new THREE.PointLightHelper(light)
 
 light.position.y = 100
 
 scene.add(light)
+light.distance = 600
 // scene.add(helper)
 //903945
 // const ambient = new THREE.AmbientLight(0Xd6ba8d)
@@ -101,22 +103,67 @@ modelLoader.load('./models/frog/scene.gltf', gltf => {
   console.error(error)
 })
 
+let redMoon
+const uniforms = {
+  u_time: { type: "f", value: 1.0 },
+};
+
+const material = new THREE.ShaderMaterial({
+  uniforms: uniforms,
+  vertexShader: vertexShader,
+  fragmentShader: fragmentShader,
+});
+const radius = 1;
+	redMoon = new THREE.Mesh(
+		//new THREE.IcosahedronGeometry( 20, 4 ),
+		new THREE.SphereGeometry(radius, 200, 100),
+		material
+	);
+	scene.add(redMoon);
+  redMoon.scale.set(70, 70, 70)
+  redMoon.position.y = 400
 
 camera.position.z = -150
 camera.position.y = 100
 
-let t = 0
+let t = 0;
+const orbitRadius = 600;
+const revolutionSpeed =  0.01
 function animate() {
-  t += 0.01
-	requestAnimationFrame( animate )
-  cylinder.position.y = 0 + Math.sin(t) * 0.5
-  cylinderT.offset = new THREE.Vector2(Math.sin(t*0.05)/2 + 0.5, 0)
-  skybox.rotation.x += 0.0002
-  skybox.rotation.y += 0.0002
-  skybox.rotation.z += 0.0002
-  light.position.x = 50*Math.cos(t*0.1) + 0;
-  light.position.z = 50*Math.sin(t*0.1) + 0;
-	renderer.render( scene, camera )
-  controls.update()
+  t += 0.01;
+  
+
+  requestAnimationFrame(animate);
+  const now = performance.now();
+  const deltaTime = now - prevTime;
+  const frameRate = 1000 / 60; // Target frame rate of 60 fps
+
+  if (deltaTime < frameRate) {
+    // Skip this frame if it's too soon
+    return;
+  }
+  t = deltaTime/1000
+  const moonPosX = Math.cos(t/3) * orbitRadius;
+  const moonPosy = Math.sin(t/3) * orbitRadius;
+  const moonPosZ = Math.sin(t/3) * orbitRadius;
+  
+  redMoon.position.set(moonPosX, moonPosy, moonPosZ);
+  redMoon.rotation.x += 0.001;
+  redMoon.rotation.y += 0.005;
+  redMoon.rotation.z += 0.001;
+
+  cylinder.position.y = 0 + Math.sin(t) * 0.5;
+  cylinderT.offset = new THREE.Vector2(Math.sin(t * 0.05) / 2 + 0.5, 0);
+  skybox.rotation.x += 0.0002;
+  skybox.rotation.y += 0.0002;
+  skybox.rotation.z += 0.0002;
+  light.position.x = 50 * Math.cos(t * 0.1) + 0;
+  light.position.z = 50 * Math.sin(t * 0.1) + 0;
+
+  renderer.render(scene, camera);
+  controls.update();
+  uniforms.u_time.value = Date.now() - start;
 }
-animate()
+let prevTime = performance.now();
+
+animate();
