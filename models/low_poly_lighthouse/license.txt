@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Lighthouse
+* source:	https://sketchfab.com/3d-models/low-poly-lighthouse-0378c7a62e5f446f80c6514bf47b76d4
+* author:	MisterH (https://sketchfab.com/TGVMisterH)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Lighthouse" (https://sketchfab.com/3d-models/low-poly-lighthouse-0378c7a62e5f446f80c6514bf47b76d4) by MisterH (https://sketchfab.com/TGVMisterH) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

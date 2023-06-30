@@ -1,0 +1,11 @@
+Model Information:
+* title:	The Flying Manta
+* source:	https://sketchfab.com/3d-models/the-flying-manta-de8549609ed14609bb3aa5381e6e2ce7
+* author:	VertaScan (https://sketchfab.com/VertaScan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The Flying Manta" (https://sketchfab.com/3d-models/the-flying-manta-de8549609ed14609bb3aa5381e6e2ce7) by VertaScan (https://sketchfab.com/VertaScan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

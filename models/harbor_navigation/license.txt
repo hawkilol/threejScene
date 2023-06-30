@@ -1,0 +1,11 @@
+Model Information:
+* title:	Harbor Navigation Buoy
+* source:	https://sketchfab.com/3d-models/harbor-navigation-buoy-62f7c151f4c048508b8cf5526f8588f9
+* author:	MisterH (https://sketchfab.com/TGVMisterH)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Harbor Navigation Buoy" (https://sketchfab.com/3d-models/harbor-navigation-buoy-62f7c151f4c048508b8cf5526f8588f9) by MisterH (https://sketchfab.com/TGVMisterH) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

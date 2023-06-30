@@ -1,0 +1,11 @@
+Model Information:
+* title:	Leonine Hydra
+* source:	https://sketchfab.com/3d-models/leonine-hydra-ed8960cc0e29410588d9663b38375af8
+* author:	Spinnee (https://sketchfab.com/Spinnee)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Leonine Hydra" (https://sketchfab.com/3d-models/leonine-hydra-ed8960cc0e29410588d9663b38375af8) by Spinnee (https://sketchfab.com/Spinnee) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

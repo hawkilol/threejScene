@@ -1,0 +1,11 @@
+Model Information:
+* title:	3D Cudgel
+* source:	https://sketchfab.com/3d-models/3d-cudgel-fc93aa2abb6e42a393396d253579a8d5
+* author:	Nedd_Nelson (https://sketchfab.com/nedd_nelson)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3D Cudgel" (https://sketchfab.com/3d-models/3d-cudgel-fc93aa2abb6e42a393396d253579a8d5) by Nedd_Nelson (https://sketchfab.com/nedd_nelson) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
