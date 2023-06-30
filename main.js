@@ -119,10 +119,30 @@ modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
   hand_anatomy.position.set(4, 10.5, -40.9)
   hand_anatomy.rotation.y = Math.PI*1.9
   hand_anatomy.translateY(15)
-  scene.add(hand_anatomy)
+  //scene.add(hand_anatomy)
 }, undefined, error => {
   console.error(error)
 })
+let rei_head
+modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
+  rei_head = gltf.scene
+  rei_head.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({map: texture})
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  rei_head.scale.set(2.5, 2.5, 2.5)
+  rei_head.position.set(4, 10.5, -40.9)
+  rei_head.rotation.y = Math.PI*1.9
+  rei_head.translateY(15)
+  scene.add(rei_head)
+}, undefined, error => {
+  console.error(error)
+})
+
 
 let frog
 const FROGHEIGHT = 2.5

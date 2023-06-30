@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ayanami Rei A-pose
+* source:	https://sketchfab.com/3d-models/ayanami-rei-a-pose-d9d4b7b09787491eac462cdc5a5ac5e8
+* author:	CheRa (https://sketchfab.com/chera3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ayanami Rei A-pose" (https://sketchfab.com/3d-models/ayanami-rei-a-pose-d9d4b7b09787491eac462cdc5a5ac5e8) by CheRa (https://sketchfab.com/chera3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
