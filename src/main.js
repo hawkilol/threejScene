@@ -461,10 +461,10 @@ function animate() {
     return;
   }
   t = deltaTime / 1000
-  const moonPosX = Math.cos(t / 3) * orbitRadius;
-  const moonPosy = Math.sin(t / 3) * orbitRadius;
+  const moonPosY = Math.cos(t / 3) * orbitRadius;
+  const moonPosX = Math.sin(t / 3) * orbitRadius;
   const moonPosZ = Math.sin(t / 3) * orbitRadius;
-  redMoon.position.set(moonPosX, moonPosy, moonPosZ);
+  redMoon.position.set(moonPosX, moonPosY, moonPosZ);
   redMoon.rotation.x += 0.001;
   redMoon.rotation.y += 0.005;
   redMoon.rotation.z += 0.001;
