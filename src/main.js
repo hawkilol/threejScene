@@ -181,10 +181,30 @@ modelLoader.load('./models/mountains/scene.gltf', gltf => {
     }
   })
   canyon_terrain.scale.set(15, 15, 15)
-  canyon_terrain.position.set(500, -50, 15)
+  canyon_terrain.position.set(500, -50, -485)
   // canyon_terrain.rotation.y = Math.PI * 1.9
   canyon_terrain.rotation.y = Math.PI 
   scene.add(canyon_terrain)
+}, undefined, error => {
+  console.error(error)
+})
+let lance
+modelLoader.load('./models/lance_of_longinus/scene.gltf', gltf => {
+  lance = gltf.scene
+  lance.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  lance.scale.set(2, 2, 2)
+  lance.position.set(-400, 400, -400)
+  lance.rotation.y = -Math.PI /2
+  lance.rotation.z = -Math.PI /2
+  lance.rotation.x = Math.PI /2
+  scene.add(lance)
 }, undefined, error => {
   console.error(error)
 })
