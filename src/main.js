@@ -102,18 +102,18 @@ const sky = new Sky();
 sky.scale.setScalar(10000);
 //scene.add( sky );
 
-function rei_head_up(){
+function rei_head_up() {
   rei_head.rotation.z = Math.PI / 2
   rei_head.rotation.x = -Math.PI / 2
   rei_head.position.y = -0.005
   rei_head.position.x = 1.5
 }
-function rei_head_side(){
+function rei_head_side() {
   rei_head.rotation.z = Math.PI / 2
 
   rei_head.position.y = 0.01
   rei_head.position.x = 1.5
-    //rei_head.rotation.y = Math.PI*1.9
+  //rei_head.rotation.y = Math.PI*1.9
 
 }
 let hand_anatomy
@@ -158,7 +158,7 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
   //rei_head_up()
   //scene.add(rei_head)
   rei_head_side()
- 
+
   //rei_head.rotation.y = Math.PI*1.9
 
 
@@ -180,7 +180,7 @@ modelLoader.load('./models/sand_beach/scene.gltf', gltf => {
   })
   sand_cliffs.scale.set(70, 70, 70)
   sand_cliffs.position.set(500, 115, 385)
-  sand_cliffs.rotation.y = Math.PI /6 * 2.7
+  sand_cliffs.rotation.y = Math.PI / 6 * 2.7
   //sand_cliffs.rotation.x = -0.192665
   //sand_cliffs.rotation.z = Math.PI * 1.3
 
@@ -201,7 +201,7 @@ modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   })
   dead_tree.scale.set(11, 11, 11)
   dead_tree.position.set(350, 0, 370)
-  dead_tree.rotation.y = Math.PI /6 * 2.7
+  dead_tree.rotation.y = Math.PI / 6 * 2.7
   //sand_cliffs.rotation.x = -0.192665
   //sand_cliffs.rotation.z = Math.PI * 1.3
 
@@ -209,27 +209,27 @@ modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
-// let let dead_tree
-// modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
-//   dead_tree = gltf.scene
-//   dead_tree.traverse((o) => {
-//     if (o.isMesh) {
-//       const texture = o.material.map
-//       o.material = new MeshStandardMaterial({ map: texture })
-//       o.castShadow = true
-//       o.receiveShadow = true
-//     }
-//   })
-//   dead_tree.scale.set(11, 11, 11)
-//   dead_tree.position.set(350, 0, 370)
-//   dead_tree.rotation.y = Math.PI /6 * 2.7
-//   //sand_cliffs.rotation.x = -0.192665
-//   //sand_cliffs.rotation.z = Math.PI * 1.3
+let plateau_terrain
+modelLoader.load('./models/plateau_terrain/scene.gltf', gltf => {
+  plateau_terrain = gltf.scene
+  plateau_terrain.traverse((o) => {
+    if (o.isMesh) {
+      const texture = textureLoader.load('./models/plateau_terrain/textures/material_baseColor.jpeg');
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  plateau_terrain.scale.set(150, 150, 150)
+  plateau_terrain.position.set(500, -45, 500)
+  plateau_terrain.rotation.y = Math.PI / 6 * 2.7
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
 
-//   scene.add(dead_tree)
-// }, undefined, error => {
-//   console.error(error)
-// })
+  scene.add(plateau_terrain)
+}, undefined, error => {
+  console.error(error)
+})
 modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
   dead_tree.traverse((o) => {
@@ -242,7 +242,7 @@ modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   })
   dead_tree.scale.set(11, 11, 11)
   dead_tree.position.set(350, 0, 370)
-  dead_tree.rotation.y = Math.PI /6 * 2.7
+  dead_tree.rotation.y = Math.PI / 6 * 2.7
   //sand_cliffs.rotation.x = -0.192665
   //sand_cliffs.rotation.z = Math.PI * 1.3
 
@@ -283,7 +283,7 @@ modelLoader.load('./models/mountains/scene.gltf', gltf => {
   canyon_terrain.scale.set(15, 15, 15)
   canyon_terrain.position.set(500, -50, -485)
   // canyon_terrain.rotation.y = Math.PI * 1.9
-  canyon_terrain.rotation.y = Math.PI 
+  canyon_terrain.rotation.y = Math.PI
   scene.add(canyon_terrain)
 }, undefined, error => {
   console.error(error)
@@ -301,9 +301,9 @@ modelLoader.load('./models/lance_of_longinus/scene.gltf', gltf => {
   })
   lance.scale.set(2, 2, 2)
   lance.position.set(-400, 400, -400)
-  lance.rotation.y = -Math.PI /2
-  lance.rotation.z = -Math.PI /2
-  lance.rotation.x = Math.PI /2
+  lance.rotation.y = -Math.PI / 2
+  lance.rotation.z = -Math.PI / 2
+  lance.rotation.x = Math.PI / 2
   scene.add(lance)
 }, undefined, error => {
   console.error(error)
@@ -367,7 +367,7 @@ function updateSun() {
 }
 
 //updateSun();
-camera.position.z = 168.951 
+camera.position.z = 168.951
 camera.position.x = 25
 camera.position.y = 30
 

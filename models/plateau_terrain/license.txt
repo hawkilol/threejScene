@@ -1,0 +1,11 @@
+Model Information:
+* title:	Plateau Terrain
+* source:	https://sketchfab.com/3d-models/plateau-terrain-e57f312648bf4284924bce9006c005c3
+* author:	Isaac Rivera (https://sketchfab.com/silverpirate)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Plateau Terrain" (https://sketchfab.com/3d-models/plateau-terrain-e57f312648bf4284924bce9006c005c3) by Isaac Rivera (https://sketchfab.com/silverpirate) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
