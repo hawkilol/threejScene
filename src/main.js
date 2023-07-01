@@ -199,39 +199,45 @@ modelLoader.load('./models/asuka/scene.gltf', gltf => {
       o.receiveShadow = true
     }
   })
+  // asuka.scale.set(15, 15, 15)
+  // asuka.position.set(-15, 10, 100)
+  // asuka.rotation.y = Math.PI
+  // asuka.scale.set(15, 15, 15)
+  // asuka.position.set(-15, 10, 100)
+  // asuka.rotation.y = Math.PI
+
+
   asuka.scale.set(15, 15, 15)
-  asuka.position.set(-15, 10, 100)
+  asuka.position.set(-5, 7, 215)
   asuka.rotation.y = Math.PI
-  //sand_cliffs.rotation.x = -0.192665
-  //sand_cliffs.rotation.z = Math.PI * 1.3
 
   scene.add(asuka)
 }, undefined, error => {
   console.error(error)
 })
-let viper_ship
-modelLoader.load('./models/viper_ship/scene.gltf', gltf => {
-  viper_ship = gltf.scene
-  viper_ship.traverse((o) => {
-    if (o.isMesh) {
-      const texture = o.material.map
-      o.material = new MeshStandardMaterial({ map: texture })
-      o.castShadow = true
-      o.receiveShadow = true
-    }
-  })
-  viper_ship.scale.set(15, 15, 15)
-  viper_ship.position.set(-50, -30, 50)
+// let viper_ship
+// modelLoader.load('./models/the_flying_manta/scene.gltf', gltf => {
+//   viper_ship = gltf.scene
+//   viper_ship.traverse((o) => {
+//     if (o.isMesh) {
+//       const texture = o.material.map
+//       o.material = new MeshBasicMaterial({ map: texture })
+//       o.castShadow = true
+//       o.receiveShadow = true
+//     }
+//   })
+//   viper_ship.scale.set(15, 15, 15)
+//   viper_ship.position.set(-50, -30, 50)
   
-  viper_ship.rotation.y = Math.PI /2
-  viper_ship.rotation.x = 0.37
-  //sand_cliffs.rotation.x = -0.192665
-  //sand_cliffs.rotation.z = Math.PI * 1.3
+//   viper_ship.rotation.y = Math.PI /2
+//   viper_ship.rotation.x = 0.37
+//   //sand_cliffs.rotation.x = -0.192665
+//   //sand_cliffs.rotation.z = Math.PI * 1.3
 
-  scene.add(viper_ship)
-}, undefined, error => {
-  console.error(error)
-})
+//   scene.add(viper_ship)
+// }, undefined, error => {
+//   console.error(error)
+// })
 let dead_tree
 modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
@@ -434,7 +440,7 @@ function updateSun() {
 }
 
 //updateSun();
-camera.position.z = 168.951
+camera.position.z = 298.951
 camera.position.x = 25
 camera.position.y = 30
 
