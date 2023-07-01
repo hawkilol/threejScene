@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { ShaderMaterial } from 'three';
-import { MeshStandardMaterial, MeshBasicMaterial, MeshLambertMaterial , MeshPhongMaterial} from 'three';
+import { MeshStandardMaterial, MeshBasicMaterial, MeshLambertMaterial, MeshPhongMaterial } from 'three';
 import { vertexShader, fragmentShader } from './shaders.js';
 import { Water } from 'three/addons/objects/Water.js'
 import { Sky } from 'three/addons/objects/Sky.js'
@@ -11,13 +11,13 @@ import { Sky } from 'three/addons/objects/Sky.js'
 // renderer.useLegacyLights = false;
 // renderer.toneMapping = THREE.ACESFilmicToneMapping;
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 )
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000)
 const modelLoader = new GLTFLoader()
 const textureLoader = new THREE.TextureLoader()
 
-const renderer = new THREE.WebGLRenderer({antialias: true})
-renderer.setSize( window.innerWidth, window.innerHeight )
-document.querySelector('#app').appendChild( renderer.domElement )
+const renderer = new THREE.WebGLRenderer({ antialias: true })
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.querySelector('#app').appendChild(renderer.domElement)
 renderer.shadowMap.enabled = true
 const controls = new OrbitControls(camera, renderer.domElement)
 
@@ -36,7 +36,7 @@ light.distance = 600
 // const ambient = new THREE.AmbientLight(0Xd6ba8d)
 // const ambient = new THREE.AmbientLight(0X903945)
 // ambient.intensity = 0.5
-const ambient = new THREE.AmbientLight(0X903945,0.1)
+const ambient = new THREE.AmbientLight(0X903945, 0.1)
 
 scene.add(ambient)
 
@@ -51,7 +51,7 @@ cylinderT.wrapS = cylinderT.wrapT = THREE.RepeatWrapping
 cylinderT.repeat = new THREE.Vector2(20, 20)
 cylinderT.encoding = THREE.sRGBEncoding;
 
-const cylinderM = new MeshStandardMaterial({map: cylinderT})
+const cylinderM = new MeshStandardMaterial({ map: cylinderT })
 const cylinder = new THREE.Mesh(cylinderG, cylinderM)
 cylinder.receiveShadow = true
 cylinder.position.y = 0
@@ -60,29 +60,29 @@ cylinder.position.y = 0
 //Sun
 sun = new THREE.Vector3();
 
-const waterGeometry = new THREE.PlaneGeometry( 10000, 10000 );
+const waterGeometry = new THREE.PlaneGeometry(10000, 10000);
 
-				water = new Water(
-					waterGeometry,
-					{
-						textureWidth: 512,
-						textureHeight: 512,
-						waterNormals: new THREE.TextureLoader().load( '/textures/waternormals.jpg', function ( texture ) {
+water = new Water(
+  waterGeometry,
+  {
+    textureWidth: 512,
+    textureHeight: 512,
+    waterNormals: new THREE.TextureLoader().load('/textures/waternormals.jpg', function (texture) {
 
-							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
-						} ),
-						sunDirection: new THREE.Vector3(),
-						sunColor: 0xe46c48,
-						waterColor: 0xde5042 ,
-						distortionScale: 3.7,
-						fog: scene.fog !== undefined
-					}
-				);
+    }),
+    sunDirection: new THREE.Vector3(),
+    sunColor: 0xe46c48,
+    waterColor: 0xde5042,
+    distortionScale: 3.7,
+    fog: scene.fog !== undefined
+  }
+);
 
 water.rotation.x = - Math.PI / 2;
 water.position.y = 5
-scene.add( water );
+scene.add(water);
 const waterUniforms = water.material.uniforms;
 
 const skyboxG = new THREE.SphereGeometry(1000, 32, 16)
@@ -93,31 +93,44 @@ skyboxT.repeat.set(5, 5)
 skyboxT.anisotropy = renderer.capabilities.getMaxAnisotropy()
 skyboxT.encoding = THREE.sRGBEncoding;
 
-const skyboxM = new THREE.MeshBasicMaterial({ map: skyboxT, side: THREE.BackSide})
+const skyboxM = new THREE.MeshBasicMaterial({ map: skyboxT, side: THREE.BackSide })
 skyboxM.transparent = true; // Enable transparency to control brightness
 skyboxM.opacity = 0.7; // Adjust the opacity value (0.0 - 1.0) to increase brightness
 const skybox = new THREE.Mesh(skyboxG, skyboxM)
 scene.add(skybox)
 
 const sky = new Sky();
-				sky.scale.setScalar( 10000 );
-				//scene.add( sky );
+sky.scale.setScalar(10000);
+//scene.add( sky );
 
+function rei_head_up(){
+  rei_head.rotation.z = Math.PI / 2
+  rei_head.rotation.x = -Math.PI / 2
+  rei_head.position.y = -0.005
+  rei_head.position.x = 1.5
+}
+function rei_head_side(){
+  rei_head.rotation.z = Math.PI / 2
 
+  rei_head.position.y = 0.01
+  rei_head.position.x = 1.5
+    //rei_head.rotation.y = Math.PI*1.9
+
+}
 let hand_anatomy
 modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
   hand_anatomy = gltf.scene
   hand_anatomy.traverse((o) => {
     if (o.isMesh) {
       const texture = o.material.map
-      o.material = new MeshStandardMaterial({map: texture})
+      o.material = new MeshStandardMaterial({ map: texture })
       o.castShadow = true
       o.receiveShadow = true
     }
   })
   hand_anatomy.scale.set(2.5, 2.5, 2.5)
   hand_anatomy.position.set(4, 10.5, -40.9)
-  hand_anatomy.rotation.y = Math.PI*1.9
+  hand_anatomy.rotation.y = Math.PI * 1.9
   hand_anatomy.translateY(15)
   //scene.add(hand_anatomy)
 }, undefined, error => {
@@ -132,7 +145,7 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
   rei_head.traverse((o) => {
     if (o.isMesh) {
       const texture = o.material.map
-      o.material = new MeshStandardMaterial({map: texture})
+      o.material = new MeshStandardMaterial({ map: texture })
       o.castShadow = true
       o.receiveShadow = true
     }
@@ -143,21 +156,38 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
   pivotRei.position.set(0, 0, 0)
 
   pivotRei.scale.set(550, 550, 550)
-  rei_head.rotation.z = Math.PI / 2
-
-  rei_head.position.y = 0.018
-  rei_head.position.x = 1.5
+  //rei_head_up()
   //scene.add(rei_head)
+  rei_head_side()
  
   //rei_head.rotation.y = Math.PI*1.9
-  
 
-  
-  
+
+
+
 }, undefined, error => {
   console.error(error)
 })
 
+let canyon_terrain
+modelLoader.load('./models/mountains/scene.gltf', gltf => {
+  canyon_terrain = gltf.scene
+  canyon_terrain.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  canyon_terrain.scale.set(15, 15, 15)
+  canyon_terrain.position.set(500, -50, 15)
+  // canyon_terrain.rotation.y = Math.PI * 1.9
+  canyon_terrain.rotation.y = Math.PI 
+  scene.add(canyon_terrain)
+}, undefined, error => {
+  console.error(error)
+})
 let frog
 const FROGHEIGHT = 2.5
 modelLoader.load('./models/frog/scene.gltf', gltf => {
@@ -166,7 +196,7 @@ modelLoader.load('./models/frog/scene.gltf', gltf => {
   frog.traverse((o) => {
     if (o.isMesh) {
       const texture = o.material.map
-      o.material = new MeshStandardMaterial({map: texture})
+      o.material = new MeshStandardMaterial({ map: texture })
       o.receiveShadow = true
     }
   })
@@ -187,14 +217,14 @@ const material = new THREE.ShaderMaterial({
   fragmentShader: fragmentShader,
 });
 const radius = 1;
-	redMoon = new THREE.Mesh(
-		//new THREE.IcosahedronGeometry( 20, 4 ),
-		new THREE.SphereGeometry(radius, 200, 100),
-		material
-	);
-	scene.add(redMoon);
-  redMoon.scale.set(70, 70, 70)
-  redMoon.position.y = 400
+redMoon = new THREE.Mesh(
+  //new THREE.IcosahedronGeometry( 20, 4 ),
+  new THREE.SphereGeometry(radius, 200, 100),
+  material
+);
+scene.add(redMoon);
+redMoon.scale.set(70, 70, 70)
+redMoon.position.y = 400
 
 
 const parameters = {
@@ -202,30 +232,31 @@ const parameters = {
   azimuth: 180
 }
 
-const pmremGenerator = new THREE.PMREMGenerator( renderer );
+const pmremGenerator = new THREE.PMREMGenerator(renderer);
 let renderTarget;
 
 function updateSun() {
-  const phi = THREE.MathUtils.degToRad( 90 - parameters.elevation );
-  const theta = THREE.MathUtils.degToRad( parameters.azimuth );
-  sun.setFromSphericalCoords( 1, phi, theta );
-  sky.material.uniforms[ 'sunPosition' ].value.copy( sun );
-  water.material.uniforms[ 'sunDirection' ].value.copy( sun ).normalize();
-  if ( renderTarget !== undefined ) renderTarget.dispose();
-  renderTarget = pmremGenerator.fromScene( sky );
+  const phi = THREE.MathUtils.degToRad(90 - parameters.elevation);
+  const theta = THREE.MathUtils.degToRad(parameters.azimuth);
+  sun.setFromSphericalCoords(1, phi, theta);
+  sky.material.uniforms['sunPosition'].value.copy(sun);
+  water.material.uniforms['sunDirection'].value.copy(sun).normalize();
+  if (renderTarget !== undefined) renderTarget.dispose();
+  renderTarget = pmremGenerator.fromScene(sky);
   scene.environment = renderTarget.texture;
 }
 
-  //updateSun();
-camera.position.z = -150
-camera.position.y = 100
+//updateSun();
+camera.position.z = 168.951 
+camera.position.x = 25
+camera.position.y = 30
 
 let t = 0;
 const orbitRadius = 600;
-const revolutionSpeed =  0.01
+const revolutionSpeed = 0.01
 function animate() {
   t += 0.01;
-  
+
 
   requestAnimationFrame(animate);
   const now = performance.now();
@@ -236,17 +267,17 @@ function animate() {
     // Skip this frame if it's too soon
     return;
   }
-  t = deltaTime/1000
-  const moonPosX = Math.cos(t/3) * orbitRadius;
-  const moonPosy = Math.sin(t/3) * orbitRadius;
-  const moonPosZ = Math.sin(t/3) * orbitRadius;
+  t = deltaTime / 1000
+  const moonPosX = Math.cos(t / 3) * orbitRadius;
+  const moonPosy = Math.sin(t / 3) * orbitRadius;
+  const moonPosZ = Math.sin(t / 3) * orbitRadius;
   redMoon.position.set(moonPosX, moonPosy, moonPosZ);
   redMoon.rotation.x += 0.001;
   redMoon.rotation.y += 0.005;
   redMoon.rotation.z += 0.001;
   cylinder.position.y = 0 + Math.sin(t) * 0.5;
   cylinderT.offset = new THREE.Vector2(Math.sin(t * 0.05) / 2 + 0.5, 0);
-  water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
+  water.material.uniforms['time'].value += 1.0 / 60.0;
   skybox.rotation.x += 0.0002;
   skybox.rotation.y += 0.0002;
   skybox.rotation.z += 0.0002;
@@ -256,6 +287,7 @@ function animate() {
   renderer.render(scene, camera);
   controls.update();
   uniforms.u_time.value = Date.now() - start;
+
 }
 let prevTime = performance.now();
 

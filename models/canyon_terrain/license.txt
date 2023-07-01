@@ -1,0 +1,11 @@
+Model Information:
+* title:	Canyon Cliff Face Low Poly
+* source:	https://sketchfab.com/3d-models/canyon-cliff-face-low-poly-df10be37cc064c6882c25dcc74a261f2
+* author:	TastefullBrick (https://sketchfab.com/tastefullbrick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Canyon Cliff Face Low Poly" (https://sketchfab.com/3d-models/canyon-cliff-face-low-poly-df10be37cc064c6882c25dcc74a261f2) by TastefullBrick (https://sketchfab.com/tastefullbrick) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
