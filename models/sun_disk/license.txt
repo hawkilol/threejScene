@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sun Disk Segment
+* source:	https://sketchfab.com/3d-models/sun-disk-segment-ee22e6af20f749bf989e91e08ed55358
+* author:	d880 (https://sketchfab.com/distance880)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sun Disk Segment" (https://sketchfab.com/3d-models/sun-disk-segment-ee22e6af20f749bf989e91e08ed55358) by d880 (https://sketchfab.com/distance880) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

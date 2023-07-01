@@ -1,0 +1,11 @@
+Model Information:
+* title:	Asuka Langley
+* source:	https://sketchfab.com/3d-models/asuka-langley-436397c520b84c44bd0cff2269ab7c25
+* author:	CheRa (https://sketchfab.com/chera3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Asuka Langley" (https://sketchfab.com/3d-models/asuka-langley-436397c520b84c44bd0cff2269ab7c25) by CheRa (https://sketchfab.com/chera3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

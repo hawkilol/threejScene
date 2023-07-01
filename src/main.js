@@ -188,6 +188,50 @@ modelLoader.load('./models/sand_beach/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
+let asuka
+modelLoader.load('./models/asuka/scene.gltf', gltf => {
+  asuka = gltf.scene
+  asuka.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  asuka.scale.set(15, 15, 15)
+  asuka.position.set(-15, 10, 100)
+  asuka.rotation.y = Math.PI
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
+
+  scene.add(asuka)
+}, undefined, error => {
+  console.error(error)
+})
+let viper_ship
+modelLoader.load('./models/viper_ship/scene.gltf', gltf => {
+  viper_ship = gltf.scene
+  viper_ship.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  viper_ship.scale.set(15, 15, 15)
+  viper_ship.position.set(-50, -30, 50)
+  
+  viper_ship.rotation.y = Math.PI /2
+  viper_ship.rotation.x = 0.37
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
+
+  scene.add(viper_ship)
+}, undefined, error => {
+  console.error(error)
+})
 let dead_tree
 modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
@@ -230,6 +274,28 @@ modelLoader.load('./models/plateau_terrain/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
+let sun_disk
+modelLoader.load('./models/sun_disk/scene.gltf', gltf => {
+  sun_disk = gltf.scene
+  sun_disk.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  sun_disk.scale.set(0.5, 0.5, 0.5)
+  sun_disk.position.set(-200, -5, 0)
+  sun_disk.rotation.y = Math.PI / 6 * 2.7
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
+
+  scene.add(sun_disk)
+}, undefined, error => {
+  console.error(error)
+})
+
 modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
   dead_tree.traverse((o) => {
@@ -308,6 +374,7 @@ modelLoader.load('./models/lance_of_longinus/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
+
 let frog
 const FROGHEIGHT = 2.5
 modelLoader.load('./models/frog/scene.gltf', gltf => {
