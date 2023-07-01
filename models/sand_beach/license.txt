@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sandy beach on Rügen / RealityScan
+* source:	https://sketchfab.com/3d-models/sandy-beach-on-rugen-realityscan-6994fc1f559045dab9e5455f27308ecd
+* author:	hhdev (https://sketchfab.com/hhdev)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sandy beach on Rügen / RealityScan" (https://sketchfab.com/3d-models/sandy-beach-on-rugen-realityscan-6994fc1f559045dab9e5455f27308ecd) by hhdev (https://sketchfab.com/hhdev) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

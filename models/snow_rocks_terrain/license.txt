@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rock terrain with light snow
+* source:	https://sketchfab.com/3d-models/rock-terrain-with-light-snow-e37252871af442e2aeb3571d1d11e65a
+* author:	Lassi Kaukonen (https://sketchfab.com/thesidekick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rock terrain with light snow" (https://sketchfab.com/3d-models/rock-terrain-with-light-snow-e37252871af442e2aeb3571d1d11e65a) by Lassi Kaukonen (https://sketchfab.com/thesidekick) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

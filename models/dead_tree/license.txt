@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dark Tree - Dol Guldur
+* source:	https://sketchfab.com/3d-models/dark-tree-dol-guldur-c9db1c56ea2a40eebc033ae2dd65c325
+* author:	3dsofsan (https://sketchfab.com/3dsofsan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dark Tree - Dol Guldur" (https://sketchfab.com/3d-models/dark-tree-dol-guldur-c9db1c56ea2a40eebc033ae2dd65c325) by 3dsofsan (https://sketchfab.com/3dsofsan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

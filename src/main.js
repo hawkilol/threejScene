@@ -7,7 +7,6 @@ import { vertexShader, fragmentShader } from './shaders.js';
 import { Water } from 'three/addons/objects/Water.js'
 import { Sky } from 'three/addons/objects/Sky.js'
 
-
 // renderer.useLegacyLights = false;
 // renderer.toneMapping = THREE.ACESFilmicToneMapping;
 const scene = new THREE.Scene()
@@ -168,7 +167,108 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
+let sand_cliffs
+modelLoader.load('./models/sand_beach/scene.gltf', gltf => {
+  sand_cliffs = gltf.scene
+  sand_cliffs.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  sand_cliffs.scale.set(70, 70, 70)
+  sand_cliffs.position.set(500, 115, 385)
+  sand_cliffs.rotation.y = Math.PI /6 * 2.7
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
 
+  scene.add(sand_cliffs)
+}, undefined, error => {
+  console.error(error)
+})
+let dead_tree
+modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
+  dead_tree = gltf.scene
+  dead_tree.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  dead_tree.scale.set(11, 11, 11)
+  dead_tree.position.set(350, 0, 370)
+  dead_tree.rotation.y = Math.PI /6 * 2.7
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
+
+  scene.add(dead_tree)
+}, undefined, error => {
+  console.error(error)
+})
+// let let dead_tree
+// modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
+//   dead_tree = gltf.scene
+//   dead_tree.traverse((o) => {
+//     if (o.isMesh) {
+//       const texture = o.material.map
+//       o.material = new MeshStandardMaterial({ map: texture })
+//       o.castShadow = true
+//       o.receiveShadow = true
+//     }
+//   })
+//   dead_tree.scale.set(11, 11, 11)
+//   dead_tree.position.set(350, 0, 370)
+//   dead_tree.rotation.y = Math.PI /6 * 2.7
+//   //sand_cliffs.rotation.x = -0.192665
+//   //sand_cliffs.rotation.z = Math.PI * 1.3
+
+//   scene.add(dead_tree)
+// }, undefined, error => {
+//   console.error(error)
+// })
+modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
+  dead_tree = gltf.scene
+  dead_tree.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  dead_tree.scale.set(11, 11, 11)
+  dead_tree.position.set(350, 0, 370)
+  dead_tree.rotation.y = Math.PI /6 * 2.7
+  //sand_cliffs.rotation.x = -0.192665
+  //sand_cliffs.rotation.z = Math.PI * 1.3
+
+  scene.add(dead_tree)
+}, undefined, error => {
+  console.error(error)
+})
+let desert_rock_terrain
+modelLoader.load('./models/snow_rocks_terrain/scene.gltf', gltf => {
+  desert_rock_terrain = gltf.scene
+  desert_rock_terrain.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  desert_rock_terrain.scale.set(25, 25, 25)
+  desert_rock_terrain.position.set(0, -30, 500)
+  desert_rock_terrain.rotation.y = Math.PI * 1.3
+
+  scene.add(desert_rock_terrain)
+}, undefined, error => {
+  console.error(error)
+})
 let canyon_terrain
 modelLoader.load('./models/mountains/scene.gltf', gltf => {
   canyon_terrain = gltf.scene

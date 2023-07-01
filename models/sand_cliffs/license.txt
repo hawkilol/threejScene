@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sand cliffs
+* source:	https://sketchfab.com/3d-models/sand-cliffs-1c5f772e12fc44ff995776e38e1953f2
+* author:	outsider (https://sketchfab.com/outsider)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sand cliffs" (https://sketchfab.com/3d-models/sand-cliffs-1c5f772e12fc44ff995776e38e1953f2) by outsider (https://sketchfab.com/outsider) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

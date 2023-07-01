@@ -1,0 +1,11 @@
+Model Information:
+* title:	Moon - Mare Moscoviense
+* source:	https://sketchfab.com/3d-models/moon-mare-moscoviense-d317da500920456195531aef290d04d9
+* author:	SebastianSosnowski (https://sketchfab.com/SebastianSosnowski)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Moon - Mare Moscoviense" (https://sketchfab.com/3d-models/moon-mare-moscoviense-d317da500920456195531aef290d04d9) by SebastianSosnowski (https://sketchfab.com/SebastianSosnowski) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
