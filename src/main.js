@@ -206,6 +206,28 @@ modelLoader.load('./models/asuka/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
+
+let moonlight_sword
+modelLoader.load('./models/moonlight_sword/scene.gltf', gltf => {
+  moonlight_sword = gltf.scene
+  moonlight_sword.traverse((o) => {
+    if (o.isMesh) {
+      const texture = o.material.map
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+
+  moonlight_sword.scale.set(15, 15, 15)
+  moonlight_sword.position.set(150, 7, 250)
+  moonlight_sword.rotation.x = Math.PI
+
+  scene.add(moonlight_sword)
+}, undefined, error => {
+  console.error(error)
+})
+
 let hand_anatomy
 modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
   hand_anatomy = gltf.scene
