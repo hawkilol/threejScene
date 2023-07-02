@@ -1,3 +1,7 @@
+//Alunos: 
+// Kalil Saldanha Kaliffe / 202004940030 
+// PEDRO INACIO DE CARVALHO JUNIOR / 202004940011
+
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
