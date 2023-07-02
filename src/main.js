@@ -126,25 +126,6 @@ function rei_head_side() {
   //rei_head.rotation.y = Math.PI*1.9
 
 }
-let hand_anatomy
-modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
-  hand_anatomy = gltf.scene
-  hand_anatomy.traverse((o) => {
-    if (o.isMesh) {
-      const texture = o.material.map
-      o.material = new MeshStandardMaterial({ map: texture })
-      o.castShadow = true
-      o.receiveShadow = true
-    }
-  })
-  hand_anatomy.scale.set(2.5, 2.5, 2.5)
-  hand_anatomy.position.set(4, 10.5, -40.9)
-  hand_anatomy.rotation.y = Math.PI * 1.9
-  hand_anatomy.translateY(15)
-  //scene.add(hand_anatomy)
-}, undefined, error => {
-  console.error(error)
-})
 const pivotRei = new THREE.Object3D();
 scene.add(pivotRei);
 let rei_head
@@ -222,6 +203,25 @@ modelLoader.load('./models/asuka/scene.gltf', gltf => {
   asuka.rotation.y = Math.PI
 
   scene.add(asuka)
+}, undefined, error => {
+  console.error(error)
+})
+let hand_anatomy
+modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
+  hand_anatomy = gltf.scene
+  hand_anatomy.traverse((o) => {
+    if (o.isMesh) {
+      const texture = textureLoader.load('./models/hand_anatomy/textures/hand_texture.jpg');
+      o.material = new MeshStandardMaterial({ map: texture })
+      o.castShadow = true
+      o.receiveShadow = true
+    }
+  })
+  hand_anatomy.scale.set(5.9,5.9 ,5.9)
+  hand_anatomy.position.set(100, 15, -50)
+  hand_anatomy.rotation.y = -Math.PI /4
+ 
+  scene.add(hand_anatomy)
 }, undefined, error => {
   console.error(error)
 })
