@@ -7,6 +7,8 @@ import { vertexShader, fragmentShader } from './shaders.js';
 import { Water } from 'three/addons/objects/Water.js'
 import { Sky } from 'three/addons/objects/Sky.js'
 
+import Stats from 'stats.js'
+
 // renderer.useLegacyLights = false;
 // renderer.toneMapping = THREE.ACESFilmicToneMapping;
 const scene = new THREE.Scene()
@@ -72,7 +74,8 @@ water = new Water(
 
     }),
     sunDirection: new THREE.Vector3(),
-    sunColor: 0xe46c48,
+    // sunColor: 0xe46c48,
+    sunColor: 0x9c0b51,
     waterColor: 0xde5042,
     distortionScale: 3.7,
     fog: scene.fog !== undefined
@@ -100,7 +103,14 @@ scene.add(skybox)
 
 const sky = new Sky();
 sky.scale.setScalar(10000);
-//scene.add( sky );
+scene.add( sky );
+
+const skyUniforms = sky.material.uniforms;
+
+skyUniforms[ 'turbidity' ].value = 5;
+skyUniforms[ 'rayleigh' ].value = 2;
+skyUniforms[ 'mieCoefficient' ].value = 0.005;
+skyUniforms[ 'mieDirectionalG' ].value = 0.8;
 
 function rei_head_up() {
   rei_head.rotation.z = Math.PI / 2
@@ -401,7 +411,7 @@ modelLoader.load('./models/frog/scene.gltf', gltf => {
 
 let redMoon
 const uniforms = {
-  u_time: { type: "f", value: 1.0 },
+  u_time: { type: "f", value: 1 },
 };
 
 const material = new THREE.ShaderMaterial({
@@ -431,15 +441,19 @@ let renderTarget;
 function updateSun() {
   const phi = THREE.MathUtils.degToRad(90 - parameters.elevation);
   const theta = THREE.MathUtils.degToRad(parameters.azimuth);
+
   sun.setFromSphericalCoords(1, phi, theta);
   sky.material.uniforms['sunPosition'].value.copy(sun);
   water.material.uniforms['sunDirection'].value.copy(sun).normalize();
   if (renderTarget !== undefined) renderTarget.dispose();
   renderTarget = pmremGenerator.fromScene(sky);
+  renderTarget.texture.opacity = 0.1;
+  renderTarget.opacity = 0.1
   scene.environment = renderTarget.texture;
+  
 }
 
-//updateSun();
+updateSun();
 camera.position.z = 298.951
 camera.position.x = 25
 camera.position.y = 30
@@ -455,7 +469,7 @@ function animate() {
   const now = performance.now();
   const deltaTime = now - prevTime;
   const frameRate = 1000 / 60; // Target frame rate of 60 fps
-
+  const secondRate = 1000 / 5;
   if (deltaTime < frameRate) {
     // Skip this frame if it's too soon
     return;
@@ -477,11 +491,23 @@ function animate() {
   light.position.x = 50 * Math.cos(t * 0.1) + 0;
   light.position.z = 50 * Math.sin(t * 0.1) + 0;
 
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; // or THREE.ReinhardToneMapping
+
+  renderer.toneMappingExposure = 0.1;
+
   renderer.render(scene, camera);
   controls.update();
   uniforms.u_time.value = Date.now() - start;
 
-}
+  //sun
+  if(!(deltaTime < secondRate)){
+    parameters.azimuth +=0.1
+    parameters.elevation +=0.1
+    updateSun()
+  }
+  
+  }
+  
 let prevTime = performance.now();
 
 animate();
