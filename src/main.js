@@ -225,29 +225,7 @@ modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
 }, undefined, error => {
   console.error(error)
 })
-// let viper_ship
-// modelLoader.load('./models/the_flying_manta/scene.gltf', gltf => {
-//   viper_ship = gltf.scene
-//   viper_ship.traverse((o) => {
-//     if (o.isMesh) {
-//       const texture = o.material.map
-//       o.material = new MeshBasicMaterial({ map: texture })
-//       o.castShadow = true
-//       o.receiveShadow = true
-//     }
-//   })
-//   viper_ship.scale.set(15, 15, 15)
-//   viper_ship.position.set(-50, -30, 50)
-  
-//   viper_ship.rotation.y = Math.PI /2
-//   viper_ship.rotation.x = 0.37
-//   //sand_cliffs.rotation.x = -0.192665
-//   //sand_cliffs.rotation.z = Math.PI * 1.3
 
-//   scene.add(viper_ship)
-// }, undefined, error => {
-//   console.error(error)
-// })
 let dead_tree
 modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
