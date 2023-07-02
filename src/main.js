@@ -429,6 +429,15 @@ scene.add(redMoon);
 redMoon.scale.set(70, 70, 70)
 redMoon.position.y = 400
 
+const redMoonLight = new THREE.DirectionalLight(0xff0000, 1);
+redMoonLight.position.copy(redMoon.position);
+scene.add(redMoonLight);
+
+redMoonLight.castShadow = true;
+redMoonLight.shadow.mapSize.width = 1024;
+redMoonLight.shadow.mapSize.height = 1024;
+redMoonLight.shadow.camera.near = 0.1;
+redMoonLight.shadow.camera.far = 2000;
 
 const parameters = {
   elevation: 2,
@@ -482,6 +491,7 @@ function animate() {
   redMoon.rotation.x += 0.001;
   redMoon.rotation.y += 0.005;
   redMoon.rotation.z += 0.001;
+  redMoonLight.position.set(moonPosX, moonPosY, moonPosZ)
   cylinder.position.y = 0 + Math.sin(t) * 0.5;
   cylinderT.offset = new THREE.Vector2(Math.sin(t * 0.05) / 2 + 0.5, 0);
   water.material.uniforms['time'].value += 1.0 / 60.0;
