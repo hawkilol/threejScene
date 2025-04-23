@@ -133,7 +133,7 @@ function rei_head_side() {
 const pivotRei = new THREE.Object3D();
 scene.add(pivotRei);
 let rei_head
-modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
+modelLoader.load('./public/models/rei_head/rei_head.gltf', gltf => {
   rei_head = gltf.scene
 
   rei_head.traverse((o) => {
@@ -163,7 +163,7 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
   console.error(error)
 })
 let sand_cliffs
-modelLoader.load('./models/sand_beach/scene.gltf', gltf => {
+modelLoader.load('./public/models/sand_beach/scene.gltf', gltf => {
   sand_cliffs = gltf.scene
   sand_cliffs.traverse((o) => {
     if (o.isMesh) {
@@ -184,7 +184,7 @@ modelLoader.load('./models/sand_beach/scene.gltf', gltf => {
   console.error(error)
 })
 let asuka
-modelLoader.load('./models/asuka/scene.gltf', gltf => {
+modelLoader.load('./public/models/asuka/scene.gltf', gltf => {
   asuka = gltf.scene
   asuka.traverse((o) => {
     if (o.isMesh) {
@@ -212,7 +212,7 @@ modelLoader.load('./models/asuka/scene.gltf', gltf => {
 })
 
 let moonlight_sword
-modelLoader.load('./models/moonlight_sword/scene.gltf', gltf => {
+modelLoader.load('./public/models/moonlight_sword/scene.gltf', gltf => {
   moonlight_sword = gltf.scene
   moonlight_sword.traverse((o) => {
     if (o.isMesh) {
@@ -233,11 +233,11 @@ modelLoader.load('./models/moonlight_sword/scene.gltf', gltf => {
 })
 
 let hand_anatomy
-modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
+modelLoader.load('./public/models/hand_anatomy/scene.gltf', gltf => {
   hand_anatomy = gltf.scene
   hand_anatomy.traverse((o) => {
     if (o.isMesh) {
-      const texture = textureLoader.load('./models/hand_anatomy/textures/hand_texture.jpg');
+      const texture = textureLoader.load('./public/models/hand_anatomy/textures/hand_texture.jpg');
       o.material = new MeshStandardMaterial({ map: texture })
       o.castShadow = true
       o.receiveShadow = true
@@ -253,7 +253,7 @@ modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
 })
 
 let dead_tree
-modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
+modelLoader.load('./public/models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
   dead_tree.traverse((o) => {
     if (o.isMesh) {
@@ -274,11 +274,11 @@ modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   console.error(error)
 })
 let plateau_terrain
-modelLoader.load('./models/plateau_terrain/scene.gltf', gltf => {
+modelLoader.load('./public/models/plateau_terrain/scene.gltf', gltf => {
   plateau_terrain = gltf.scene
   plateau_terrain.traverse((o) => {
     if (o.isMesh) {
-      const texture = textureLoader.load('./models/plateau_terrain/textures/material_baseColor.jpeg');
+      const texture = textureLoader.load('./public/models/plateau_terrain/textures/material_baseColor.jpeg');
       o.material = new MeshStandardMaterial({ map: texture })
       o.castShadow = true
       o.receiveShadow = true
@@ -295,7 +295,7 @@ modelLoader.load('./models/plateau_terrain/scene.gltf', gltf => {
   console.error(error)
 })
 let sun_disk
-modelLoader.load('./models/sun_disk/scene.gltf', gltf => {
+modelLoader.load('./public/models/sun_disk/scene.gltf', gltf => {
   sun_disk = gltf.scene
   sun_disk.traverse((o) => {
     if (o.isMesh) {
@@ -316,7 +316,7 @@ modelLoader.load('./models/sun_disk/scene.gltf', gltf => {
   console.error(error)
 })
 
-modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
+modelLoader.load('./public/models/dead_tree/scene.gltf', gltf => {
   dead_tree = gltf.scene
   dead_tree.traverse((o) => {
     if (o.isMesh) {
@@ -337,7 +337,7 @@ modelLoader.load('./models/dead_tree/scene.gltf', gltf => {
   console.error(error)
 })
 let desert_rock_terrain
-modelLoader.load('./models/snow_rocks_terrain/scene.gltf', gltf => {
+modelLoader.load('./public/models/snow_rocks_terrain/scene.gltf', gltf => {
   desert_rock_terrain = gltf.scene
   desert_rock_terrain.traverse((o) => {
     if (o.isMesh) {
@@ -356,7 +356,7 @@ modelLoader.load('./models/snow_rocks_terrain/scene.gltf', gltf => {
   console.error(error)
 })
 let canyon_terrain
-modelLoader.load('./models/mountains/scene.gltf', gltf => {
+modelLoader.load('./public/models/mountains/scene.gltf', gltf => {
   canyon_terrain = gltf.scene
   canyon_terrain.traverse((o) => {
     if (o.isMesh) {
@@ -375,7 +375,7 @@ modelLoader.load('./models/mountains/scene.gltf', gltf => {
   console.error(error)
 })
 let lance
-modelLoader.load('./models/lance_of_longinus/scene.gltf', gltf => {
+modelLoader.load('./public/models/lance_of_longinus/scene.gltf', gltf => {
   lance = gltf.scene
   lance.traverse((o) => {
     if (o.isMesh) {
@@ -397,7 +397,7 @@ modelLoader.load('./models/lance_of_longinus/scene.gltf', gltf => {
 
 let frog
 const FROGHEIGHT = 2.5
-modelLoader.load('./models/frog/scene.gltf', gltf => {
+modelLoader.load('./public/models/frog/scene.gltf', gltf => {
   frog = gltf.scene
   scene.add(frog)
   frog.traverse((o) => {

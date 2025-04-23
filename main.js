@@ -105,7 +105,7 @@ const sky = new Sky();
 
 
 let hand_anatomy
-modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
+modelLoader.load('./public/models/hand_anatomy/scene.gltf', gltf => {
   hand_anatomy = gltf.scene
   hand_anatomy.traverse((o) => {
     if (o.isMesh) {
@@ -124,7 +124,7 @@ modelLoader.load('./models/hand_anatomy/scene.gltf', gltf => {
   console.error(error)
 })
 let rei_head
-modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
+modelLoader.load('./public/models/rei_head/rei_head.gltf', gltf => {
   rei_head = gltf.scene
   rei_head.traverse((o) => {
     if (o.isMesh) {
@@ -146,7 +146,7 @@ modelLoader.load('./models/rei_head/rei_head.gltf', gltf => {
 
 let frog
 const FROGHEIGHT = 2.5
-modelLoader.load('./models/frog/scene.gltf', gltf => {
+modelLoader.load('./public/models/frog/scene.gltf', gltf => {
   frog = gltf.scene
   scene.add(frog)
   frog.traverse((o) => {
